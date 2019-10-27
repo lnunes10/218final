@@ -1,7 +1,7 @@
 <?php
 $the_name=filter_input(INPUT_POST,'the_name');
 $body=filter_input(INPUT_POST,'body');
-$skills=filter_input(INPUT_POST,'skills[]',FILTER_REQUIRE_ARRAY);
+$skills=filter_input(INPUT_POST,'skills[]',FILTER_SANITIZE_FULL_SPECIAL_CHARS,FILTER_REQUIRE_ARRAY);
 $skills_string=implode($skills,',');
 
 
@@ -17,3 +17,6 @@ if(empty($password )||strlen($password>500)){
 
 else
     echo $body;
+if ($skills_string>=2)
+print_r($skills);
+echo $skills_string;
