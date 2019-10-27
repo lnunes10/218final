@@ -1,8 +1,13 @@
 
-<html>
+<html lang="en">
 <head>
-    <body>
-            <form action="display.php" method="post">
+    <meta charset="UTF-8">
+<title>Form Data</title>
+</head>
+<body>
+<h1>Form 2</h1>
+            <form action="form2.php" method="post">
+                <div>
                 <label>First Name: </label>
                 <input type="text" name="First_name"/><br>
                 <label>Last Name:</label>
@@ -14,12 +19,13 @@
                 <label>Password:</label>
                 <input type="password" name="password1"/><br>
                 <input type="hidden" name="action" value="login"/><br>
+                </div>
 
                 <label>&nbsp;</label>
                 <input type="submit" value="Submit"/>
 
+            </form>
+</body>
 
 
-    </body>
-</head>
 </html>
