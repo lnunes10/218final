@@ -5,7 +5,7 @@
       <paths name="NJIT AFS">
         <serverdata>
           <mappings>
-            <mapping deploy="/afs/cad.njit.edu/u/l/n/ln64/public_html" local="$PROJECT_DIR$" web="/afsconnect1.njit.edu" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/web.njit.edu/~ln64" />
             <mapping local="" />
           </mappings>
         </serverdata>
