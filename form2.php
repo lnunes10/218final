@@ -32,12 +32,9 @@ else {
 echo "<br><br>";
 
 
-if(empty($email )) {
+if(empty($email )||strpos($email,'@')<0) {
     echo 'Enter a valid email address';
 }
-
-else if(strpos($email,'@')<0){
-    echo 'Enter a valid email address. Needs @';}
 
 else{
     echo $email;
