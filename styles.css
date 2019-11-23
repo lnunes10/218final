@@ -10,3 +10,11 @@
     margin: 4px 2px;
     cursor: pointer;
 }
+.formbox{
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    display:inline-block;
+    text-align:center;
+}
