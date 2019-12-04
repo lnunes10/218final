@@ -1,5 +1,5 @@
 <?php
-require('database.php');
+require('model/database.php');
 
 $the_name=filter_input(INPUT_POST,'the_name');
 $body=filter_input(INPUT_POST,'body');

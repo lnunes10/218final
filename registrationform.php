@@ -1,6 +1,6 @@
 <?php
 
-require('database.php');
+require('model/database.php');
 
 $first_name=filter_input(INPUT_POST,'first_name');
 $last_name=filter_input(INPUT_POST,'last_name');
@@ -62,6 +62,8 @@ if(!empty($first_name)) {
         $statement->execute();
 
         $statement->closeCursor();
+        $ownerid = $db->lastInsertId();
+
         header("Location:display.php?ownerid=$ownerid");
     }
 }
