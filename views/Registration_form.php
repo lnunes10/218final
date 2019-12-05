@@ -1,24 +1,8 @@
-
-<!doctype html>
-
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
-
-    <link rel="stylesheet" href="styles.css?v=1.0">
-</head>
-<body>
-<div class="nav ">IS 218 FAQ
-
-</div>
+<?php include('views/header.php'); ?>
 
 <div class="form_box title">
 <h1>Registration Form</h1>
-            <form action="registrationform.php" method="post">
+            <form action="index.php" method="post">
                 <div>
                 <label>First Name: </label>
                 <input type="text" name="first_name"/><br>
@@ -37,13 +21,4 @@
                 <input type="submit" value="Submit"/>
 
             </form>
-</div>
-<div class="footer text">
-    Lorraine Nunes @ 2019
-
-
-</div>
-</body>
-
-
-</html>
+    <?php include('views/footer.php'); ?>

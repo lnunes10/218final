@@ -15,5 +15,3 @@
 </head>
 <body>
 <div class="nav">IS 218 FAQ</div>
-</body>
-</html>

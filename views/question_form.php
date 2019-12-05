@@ -1,9 +1,7 @@
-<?php require 'views/header.php' ?>
-<!doctype html>
-    <form action="Questionsform.php" method="post">
+<?php include 'views/header.php' ?>
+    <form action=index.php" method="post">
         <div class="text">
             <h1>Questions Form</h1><hr>
-        </div>
         <div>
 
             <label>Name </label>
@@ -30,4 +28,5 @@
         <br><br>
         <input type="submit" value="Submit"/>
     </form>
+<?php include('views/footer.php'); ?>
 
