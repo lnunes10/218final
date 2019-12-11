@@ -41,6 +41,23 @@ switch ($action) {
         break;
     }
 
+    case 'add_user':{
+        $fname=filter_input(INPUT_POST,'fname');
+        $lname=filter_input(INPUT_POST,'lname');
+        $birthday=filter_input(INPUT_POST,'birthday');
+        $email=filter_input(INPUT_POST,'email');
+        $password=filter_input(INPUT_POST,'password');
+        if ($fname==NULL ||$lname==NULL || $birthday==NULL || $email==NULL || $password==NULL){
+            echo "error";
+        }
+        else {
+            $userId=add_user($fname,$lname,$birthday,$email,$password);
+            header("Location: .?action=display_questions&userId=$userId");
+        }
+
+        break;
+    }
+
     case 'display_questions': {
         $userId = filter_input(INPUT_GET, 'userId');
         if ($userId == NULL || $userId < 0) {
@@ -49,6 +66,30 @@ switch ($action) {
             $questions = get_users_questions($userId);
             include('views/display_questions.php');
         }
+        break;
+    }
+    case 'add_question':{
+        $userId=filter_input(INPUT_GET,'userId');
+        if ($userId == NULL || $userId < 0) {
+            header('Location: .?action=display_login');
+        } else {
+            $questions = add_question($userId);
+            include('views/display_questions.php');
+        }
+        break;
+
+
+
+    }
+    case 'delete_question':{
+        $id=filter_input(INPUT_POST,'id');
+        if($id==NULL){
+            echo "error";
+}
+        else{
+    $questions=delete_question($id);
+    header("Location:.?action=display_questions");
+}
         break;
     }
 
@@ -61,4 +102,5 @@ switch ($action) {
     default: {
         echo "error";
     }
+    break;
 }
