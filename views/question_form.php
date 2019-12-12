@@ -1,13 +1,16 @@
 <?php include 'views/header.php' ?>
-    <form action=index.php" method="post">
+    <form action="index.php" method="post">
         <div class="text">
             <h1>Questions Form</h1><hr>
         <div>
 
             <label>Name </label>
-            <input type="text" name="the_name"><br><br>
+            <input type="text" name="first_name"><br><br>
+            <label>Title </label>
+            <input type="text" name="title"><br><br>
             <label>Question </label>
             <textarea name="body" rows="'4" cols="20"> </textarea><br>
+
         </div>
         <h2>Skills</h2>
         <div>
@@ -21,8 +24,9 @@
         </div>
         <div>
             <h2>Owner ID</h2>
-            <label for="ownerid">owner id</label>
-            <input type="text" name="ownerid" id="ownerid">
+            <label for="ownerId">owner id</label>
+            <input type="text" name="ownerId" id="ownerId">
+            <input type="hidden" name="action" value="add_question"/><br>
 
         </div>
         <br><br>

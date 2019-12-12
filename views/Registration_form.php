@@ -14,11 +14,13 @@
                 <input type="text" name="email"/><br>
                 <label>Password:</label>
                 <input type="password" name="password1"/><br>
-                <input type="hidden" name="action" value="login"/><br>
+                <input type="hidden" name="action" value="add_user"/><br>
                 </div>
 
                 <label>&nbsp;</label>
                 <input type="submit" value="Submit"/>
 
             </form>
+
+</div>
     <?php include('views/footer.php'); ?>

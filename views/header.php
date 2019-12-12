@@ -11,7 +11,7 @@
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
 
-    <link rel="stylesheet" href="styles.css?v=1.0">
+    <link rel="stylesheet" href="https://web.njit.edu/~ln64/is218proj/styles.css">
 </head>
 <body>
 <div class="nav">IS 218 FAQ</div>

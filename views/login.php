@@ -8,11 +8,12 @@
                 <input type="text" name="email_address"/><br><br>
                 <label>password:</label>
                 <input type="password" name="password"/><br>
-                <input type="hidden" name="action" value="login"/><br>
+                <input type="hidden" name="action" value="validate_login"/><br>
 
                 <label>&nbsp;</label>
                 <input type="submit" value="Submit"/>
             </form>
+</div>
 
 <?php include('views/footer.php'); ?>
 

@@ -18,7 +18,7 @@ switch ($action) {
     }
 
     case 'validate_login': {
-        $email = filter_input(INPUT_POST, 'email');
+        $email = filter_input(INPUT_POST, 'email_address');
         $password = filter_input(INPUT_POST, 'password');
 
         if ($email == NULL || $password == NULL) {
@@ -42,11 +42,11 @@ switch ($action) {
     }
 
     case 'add_user':{
-        $fname=filter_input(INPUT_POST,'fname');
-        $lname=filter_input(INPUT_POST,'lname');
+        $fname=filter_input(INPUT_POST,'first_name');
+        $lname=filter_input(INPUT_POST,'last_name');
         $birthday=filter_input(INPUT_POST,'birthday');
         $email=filter_input(INPUT_POST,'email');
-        $password=filter_input(INPUT_POST,'password');
+        $password=filter_input(INPUT_POST,'password1');
         if ($fname==NULL ||$lname==NULL || $birthday==NULL || $email==NULL || $password==NULL){
             echo "error";
         }
@@ -61,7 +61,7 @@ switch ($action) {
     case 'display_questions': {
         $userId = filter_input(INPUT_GET, 'userId');
         if ($userId == NULL || $userId < 0) {
-            header('Location: .?action=display_login');
+            header('Location: .?action=show_login');
         } else {
             $questions = get_users_questions($userId);
             include('views/display_questions.php');
@@ -69,12 +69,16 @@ switch ($action) {
         break;
     }
     case 'add_question':{
-        $userId=filter_input(INPUT_GET,'userId');
-        if ($userId == NULL || $userId < 0) {
-            header('Location: .?action=display_login');
+        $userId=filter_input(INPUT_POST,'ownerId');
+        $title=filter_input(INPUT_POST,'title');
+        $body=filter_input(INPUT_POST,'body');
+        $skills=filter_input(INPUT_POST,'skills');
+
+        if ($userId == NULL) {
+            header('Location: .?action=show_login');
         } else {
-            $questions = add_question($userId);
-            include('views/display_questions.php');
+             add_question($userId,$title,$body,$skills);
+            header("Location: .?action=display_questions&userId=$userId");
         }
         break;
 
@@ -87,8 +91,8 @@ switch ($action) {
             echo "error";
 }
         else{
-    $questions=delete_question($id);
-    header("Location:.?action=display_questions");
+    delete_question($id);
+    header("Location:.?action=display_questions&userId=$userId");
 }
         break;
     }
