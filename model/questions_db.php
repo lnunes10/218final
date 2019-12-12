@@ -20,24 +20,21 @@ WHERE id=:id';
     $statement=$db->prepare($query);
     $statement->bindValue(':id',$id);
     $statement->execute();
-    $questions=$statement->fetch();
     $statement->closeCursor();
-    return $questions;
+
 }
 
-function add_question($fname,$userId, $title, $body, $skills)
+function add_question($userId, $title, $body, $skills)
 {
     global $db;
-    $query = 'INSERT INTO questions
-VALUES(:fname,:ownerId,:,title,:body,:skills)';
-    $statement = $db->prepare($query);
-    $statement->bindValue(':first_name',$fname);
+    $query = 'INSERT INTO questions(ownerId,title,body,skills)
+VALUES(:ownerId,:,title,:body,:skills)';
+    $statement = $db->prepare($query);;
     $statement->bindValue(':ownerId', $userId);
     $statement->bindValue(':title', $title);
     $statement->bindValue(':body', $body);
     $statement->bindValue(':skills', $skills);
     $statement->execute();
-    $questions = $statement->fetch();
     $statement->closeCursor();
-    return $questions;
+
 }
