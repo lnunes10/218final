@@ -4,9 +4,9 @@ function get_users_questions($userId)
 {
     global $db;
     $query = 'SELECT * FROM questions
-WHERE ownerid=:ownerid';
+WHERE ownerId=:ownerId';
     $statement = $db->prepare($query);
-    $statement->bindValue(':ownerid', $userId);
+    $statement->bindValue(':ownerId', $userId);
     $statement->execute();
     $questions = $statement->fetchAll();
     $statement->closeCursor();
@@ -25,13 +25,14 @@ WHERE id=:id';
     return $questions;
 }
 
-function add_question($userId)
+function add_question($fname,$userId, $title, $body, $skills)
 {
     global $db;
     $query = 'INSERT INTO questions
-VALUES(:ownerid,:title,:body,:skills)';
+VALUES(:fname,:ownerId,:,title,:body,:skills)';
     $statement = $db->prepare($query);
-    $statement->bindValue(':ownerid', $userId);
+    $statement->bindValue(':first_name',$fname);
+    $statement->bindValue(':ownerId', $userId);
     $statement->bindValue(':title', $title);
     $statement->bindValue(':body', $body);
     $statement->bindValue(':skills', $skills);
