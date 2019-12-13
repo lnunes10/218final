@@ -92,6 +92,7 @@ switch ($action) {
             specific_question($id);
             header("Location:.?action=display_questions&userId=$userId");
         }
+        break;
     }
     case 'delete_question':{
         $id=filter_input(INPUT_POST,'id');
