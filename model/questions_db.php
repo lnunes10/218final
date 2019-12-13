@@ -28,7 +28,7 @@ function add_question($userId, $title, $body, $skills)
 {
     global $db;
     $query = 'INSERT INTO questions(ownerId,title,body,skills)
-VALUES(:ownerId,:,title,:body,:skills)';
+VALUES(:ownerId,:title,:body,:skills)';
     $statement = $db->prepare($query);;
     $statement->bindValue(':ownerId', $userId);
     $statement->bindValue(':title', $title);
@@ -37,4 +37,15 @@ VALUES(:ownerId,:,title,:body,:skills)';
     $statement->execute();
     $statement->closeCursor();
 
+}
+function specific_question($id)
+{
+    global $db;
+    $query = "SELECT title, body, skills FROM questions WHERE id=:id";
+    $statement = $db->prepare($query);
+    $statement->bindValue(':questionId', $id);
+    $statement->execute();
+    $question = $statement->fetch();
+    $statement->closeCursor();
+    return $question[0]['id'];
 }

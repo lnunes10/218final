@@ -14,12 +14,12 @@
         </div>
         <h2>Skills</h2>
         <div>
-            <input type="checkbox" name="skills[]" value="skill1" id="skill1">
-            <label for="skill1">skills1</label><br>
-            <input type="checkbox" name="skills[]" value="skill2" id="skill2">
-            <label for="skill2">skills2</label><br>
-            <input type="checkbox" name="skills[]" value="skill3" id="skill3">
-            <label for="skill3">skills3</label><br>
+            <input type="checkbox" name="skills" value="skill1" id="skill1">
+            <label for="skill1">Programming</label><br>
+            <input type="checkbox" name="skills" value="skill2" id="skill2">
+            <label for="skill2">Debugging</label><br>
+            <input type="checkbox" name="skills" value="skill3" id="skill3">
+            <label for="skill3">Web design</label><br>
             <br>
         </div>
         <div>
@@ -31,6 +31,8 @@
         </div>
         <br><br>
         <input type="submit" value="Submit"/>
+        </div>
     </form>
+
 <?php include('views/footer.php'); ?>
 
