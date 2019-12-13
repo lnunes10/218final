@@ -82,8 +82,16 @@ switch ($action) {
         }
         break;
 
-
-
+    }
+    case 'specific_question':{
+        $id=filter_input(INPUT_POST,'id');
+        if($id==NULL){
+            echo "error with this";
+        }
+        else{
+            specific_question($id);
+            header("Location:.?action=display_questions&userId=$userId");
+        }
     }
     case 'delete_question':{
         $id=filter_input(INPUT_POST,'id');
@@ -93,8 +101,9 @@ switch ($action) {
         else{
     delete_question($id);
     header("Location:.?action=display_questions&userId=$userId");
+    break;
 }
-        break;
+
     }
 
     case 'display_question_form': {
