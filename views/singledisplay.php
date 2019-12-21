@@ -1,9 +1,13 @@
 
 <?php include('views/header.php'); ?>
-<a href=".?action=logout&userId=<?php echo $userId ?>">Logout</a>
 
-    <a href=".?>">Add Questions</a>
+<a href=".?action=display_question_form&userId=<?php echo $userId ?>">Add Questions</a>
 <div>
+    <form action="index.php" method="post">
+        <input type="hidden" name="action" value="all_questions_users">
+        <input type="hidden" name="userId" value="<?php echo $userId; ?>">
+        <input type="submit" value="Other Questions" class="btn">
+    </form>
     <table>
         <tr>
             <th>Title</th>
@@ -20,10 +24,10 @@
                 <td><?php echo $question['body']; ?></td>
                 <td><?php echo $question['skills'];?></td>
                 <td> <form action="." method="post">
-                <input type="hidden" name="action"
-                       value="delete_question">
-                <input type="hidden" name="id"
-                       value="<?php echo $question['id'];?>">
+                        <input type="hidden" name="action"
+                               value="delete_question">
+                        <input type="hidden" name="id"
+                               value="<?php echo $question['id'];?>">
                         <input type="submit" value="Delete">
                     </form>
                 </td>

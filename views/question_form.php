@@ -15,7 +15,7 @@
         <h2>Skills</h2>
         <div>
             <input type="checkbox" name="skills" value="skill1" id="skill1">
-            <label for="skill1">Programming</label><br>
+            <label for="skill1">skill1</label><br>
             <input type="checkbox" name="skills" value="skill2" id="skill2">
             <label for="skill2">Debugging</label><br>
             <input type="checkbox" name="skills" value="skill3" id="skill3">
